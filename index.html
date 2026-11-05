@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="COMPAS DEV End of Year 2026, followed by the DFAB Alumni Network Party.">
+<title>EOF 2026 — COMPAS DEV</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="EOF 2026 — COMPAS DEV">
+<meta property="og:description" content="December 11th, 14:00–16:00 at ETH Hönggerberg, HIB Open Space 2. Followed by the DFAB Alumni Network Party.">
+<meta property="og:url" content="https://compas.dev/eof26/">
+<meta property="og:image" content="https://compas.dev/eof26/assets/eof-dark.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/compas.png">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="wrap header">
+  <a class="brand" href="#top"><img src="assets/compas-header.png" width="960" height="199" alt="COMPAS"></a>
+  <nav aria-label="Event"><a href="#programme">Programme</a><a class="nav-rsvp" href="#rsvp">RSVP <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main id="top" class="wrap">
+  <section class="hero" aria-labelledby="event-title">
+    <div class="intro">
+      <div class="eyebrow">Finishing 2026 in style <span aria-hidden="true">🪩🍾</span></div>
+      <h1 id="event-title">End of<br> Year<span class="period">.</span></h1>
+      <p>Join the COMPAS community to close out a year filled with exciting announcements! Followed by the DFAB Alumni Network party!</p>
+      <a class="primary" href="#rsvp">Reserve your spot <span aria-hidden="true">↗</span></a>
+      <p class="meta"><span><time datetime="2026-12-11">December 11th</time>, 14:00–16:00</span> <span>at ETH Hönggerberg, HIB Open Space 2</span></p>
+    </div>
+    <figure class="art">
+      <img id="mark" src="assets/eof-dark.png" width="800" height="448" alt="The tiled EOF mark rotates into E26 as some red pieces shift from solid to wireframe and back.">
+      <figcaption>
+        <button id="motion" type="button" class="motion">Play motion</button>
+      </figcaption>
+    </figure>
+  </section>
+  <section id="programme" class="programme" aria-labelledby="programme-title">
+    <div><div class="eyebrow">Programme</div><h2 id="programme-title">Two parts.<br> One evening.</h2></div>
+    <div class="programme-list">
+      <article><span class="index">01</span><div><h3>COMPAS DEV EOF</h3><p>End of Year 2026</p></div><span class="tag">Public event</span></article>
+      <article><span class="index">02</span><div><h3>DFAB Alumni Network Party</h3><p>Following the COMPAS DEV event</p></div><span class="tag">DFAB alumni</span></article>
+    </div>
+  </section>
+  <section id="rsvp" class="rsvp" aria-labelledby="rsvp-title">
+    <div><div class="eyebrow">RSVP</div><h2 id="rsvp-title">Reserve<br> your spot.</h2><p>Attendance is free, but registration is required so we can plan accordingly. This RSVP is for the COMPAS DEV EOF.</p></div>
+    <form id="rsvp-form" action="https://assets.mailerlite.com/jsonp/1476040/forms/203331740116191033/subscribe" method="post">
+      <div class="fields">
+        <label>Full name<input name="fields[name]" required autocomplete="name" placeholder="Your name"></label>
+        <label>Email address<input name="fields[email]" required type="email" autocomplete="email" placeholder="you@example.com"></label>
+      </div>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button class="primary" type="submit">Reserve your spot <span aria-hidden="true">↗</span></button>
+      <p id="form-status" role="status" hidden></p>
+    </form>
+  </section>
+</main>
+<footer class="wrap footer"><span>COMPAS DEV · EOF 2026</span><a href="https://compas.dev">© 2026 COMPAS Association</a></footer>
+</body>
+</html>
