@@ -33,19 +33,25 @@ h1{font-size:clamp(75px,8.8vw,142px);line-height:.85;letter-spacing:-.092em;marg
 .meta{margin-top:20px;padding-left:12px;border-left:2px solid var(--accent);color:var(--muted);font:500 13px/1.55 var(--head);letter-spacing:0;text-transform:none}
 .meta span{display:block}
 .meta span:first-child{color:#ff8279;font:600 13px/1.55 var(--mono);font-variant-numeric:tabular-nums}
+.art{position:relative}
 .art img{display:block;mix-blend-mode:lighten;width:100%;height:auto;aspect-ratio:800/448}
-figcaption{display:flex;justify-content:flex-end}
 fieldset{padding:0;border:0;margin:0;min-inline-size:0}
 legend{margin-bottom:6px;color:var(--muted)}
-.motion{border:0;background:none;color:var(--muted);padding:8px 0 8px 12px;font-size:12px}
+/* Bottom edge sits on the baseline of the EOF letters (y=368 of the 448px-high mark). */
+.motion{position:absolute;right:0;bottom:17.86%;display:block;border:0;background:none;color:var(--muted);padding:0;line-height:0}
+.motion svg{display:block;fill:currentColor}
 .motion:hover{color:var(--ink)}
+.motion .icon-play,.motion[data-playing="false"] .icon-pause{display:none}
+.motion[data-playing="false"] .icon-play{display:block}
 .programme,.rsvp{display:grid;grid-template-columns:minmax(230px,.8fr) minmax(0,1.2fr);gap:56px;padding-block:64px}
 h2{font-size:clamp(45px,5vw,78px);line-height:.94;letter-spacing:-.075em;margin-top:12px}
 .programme-list article{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:12px;padding:19px 0}
 .programme-list article+article{border-top:1px solid var(--rule)}
 h3{font-size:clamp(17px,2vw,26px);letter-spacing:-.035em;line-height:1.15}
+.programme .lede{max-width:34ch;margin-top:15px}
 .programme p,.rsvp p{color:var(--muted);font-size:14px;margin-top:5px}
 .tag{color:var(--muted)}
+.tba h3{color:var(--muted)}
 .rsvp>div p{max-width:34ch;margin-top:15px}
 form{padding:24px;background:var(--surface)}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}

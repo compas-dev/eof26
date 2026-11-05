@@ -5,7 +5,8 @@ let playing = !reducedMotion.matches;
 
 function showMotion() {
   mark.src = playing ? 'assets/eof-wire.gif' : 'assets/eof-dark.png';
-  motion.textContent = playing ? 'Pause motion' : 'Play motion';
+  motion.dataset.playing = String(playing);
+  motion.setAttribute('aria-label', playing ? 'Pause motion' : 'Play motion');
 }
 
 motion.addEventListener('click', () => {
