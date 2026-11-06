@@ -49,6 +49,7 @@ ffmpeg -v error -y -i "$OUT/eof26-screen-1920x1080.mp4" -vf scale=960:-2 -c:v li
 cp "$ROOT/assets/eof-wire.gif" "$OUT/eof26-mark-animated.gif"
 magick "$ROOT/assets/eof-dark.png" -background '#101010' -flatten "$OUT/eof26-mark.png"
 cp "$ROOT/assets/compas-header.png" "$OUT/compas-logo-horizontal.png"
+cp "$SRC"/logos/nccr-dfab-logo-*.png "$OUT/"  # from dfab.ch; only small PNGs are published there
 
 # Everything in one download
 rm -f "$OUT/eof26-press-kit.zip"
