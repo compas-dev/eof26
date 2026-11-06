@@ -30,6 +30,23 @@ function showStatus(message, isError) {
   status.classList.toggle('error', isError);
 }
 
+const done = document.querySelector('#rsvp-done');
+
+function showDone(email) {
+  status.hidden = true;
+  document.querySelector('#rsvp-email').textContent = email;
+  form.dataset.sent = '';
+  done.hidden = false;
+  done.focus({ preventScroll: true });
+  done.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'center' });
+}
+
+document.querySelector('#rsvp-again').addEventListener('click', () => {
+  delete form.dataset.sent;
+  done.hidden = true;
+  form.querySelector('input[name="fields[name]"]').focus();
+});
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   submit.disabled = true;
@@ -37,8 +54,8 @@ form.addEventListener('submit', async (event) => {
     const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
     const result = await response.json().catch(() => ({}));
     if (!response.ok || result.success === false) throw new Error('Subscription failed');
+    showDone(form.elements['fields[email]'].value);
     form.reset();
-    showStatus('Thank you for signing up! We are looking forward to seeing you.', false);
   } catch {
     showStatus('Something went wrong, please try again.', true);
   } finally {

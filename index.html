@@ -109,6 +109,13 @@
         <input type="hidden" name="anticsrf" value="true">
         <button class="primary" type="submit">Reserve your spot <span aria-hidden="true">↗</span></button>
         <p id="form-status" role="status" hidden></p>
+        <div id="rsvp-done" class="done" tabindex="-1" hidden>
+          <div class="eyebrow"><span class="check" aria-hidden="true">✓</span> Spot reserved</div>
+          <h3>See you on December 11th!</h3>
+          <p>We sent a confirmation email to <strong id="rsvp-email"></strong>. If it isn't in your inbox within a few
+            minutes, check your spam folder.</p>
+          <button id="rsvp-again" type="button" class="link">Register someone else</button>
+        </div>
       </form>
     </section>
   </main>
