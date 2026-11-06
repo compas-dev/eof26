@@ -40,6 +40,11 @@ video() { # format width height mark_x mark_y mark_w output
 video square 1080 1080   72 120 936 "$OUT/eof26-square-1080x1080.mp4"
 video slide  1920 1080  900 250 900 "$OUT/eof26-screen-1920x1080.mp4"
 
+# Small WebM previews for the press page (browsers without H.264, e.g. VS Code)
+mkdir -p "$OUT/preview"
+ffmpeg -v error -y -i "$OUT/eof26-square-1080x1080.mp4" -vf scale=540:-2 -c:v libvpx-vp9 -crf 38 -b:v 0 -an "$OUT/preview/eof26-square.webm"
+ffmpeg -v error -y -i "$OUT/eof26-screen-1920x1080.mp4" -vf scale=960:-2 -c:v libvpx-vp9 -crf 38 -b:v 0 -an "$OUT/preview/eof26-screen.webm"
+
 # Animation and still of the mark on its own
 cp "$ROOT/assets/eof-wire.gif" "$OUT/eof26-mark-animated.gif"
 magick "$ROOT/assets/eof-dark.png" -background '#101010' -flatten "$OUT/eof26-mark.png"
